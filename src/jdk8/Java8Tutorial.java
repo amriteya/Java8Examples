@@ -78,6 +78,9 @@ public class Java8Tutorial {
 		Collections.sort(names, (String a, String b) -> a.compareTo(b));
 		
 		
+		System.out.println(names);
+		
+		
 		logicalSeparator();
 		
 		/*
@@ -87,15 +90,47 @@ public class Java8Tutorial {
 		 */
 		Collections.sort(names, (a,b)-> b.compareTo(a));
 		
+		System.out.println(names);
+		
 		logicalSeparator();
 		
 	}
+	
+	/**
+	 * Example for functional interface.
+	 * Functional interface defined as Converter interface.
+	 * 
+	 */
+	public static void functionalInterface() {
+		
+		
+		/*
+		 * We are defining the action to be performed by the singleton 
+		 * abstract method in Converter.
+		 */
+		Converter<String, Integer> converter = (from) -> Integer.valueOf(from);
+		
+		Integer convertedInteger = converter.convert("123");
+		
+		System.out.println(convertedInteger);
+		
+		logicalSeparator();
+		
+		
+	}
+	
 	public static void main(String[] args){
 		
 		
 		//Testing lambda expression in Java8
 		lambdaExpressions();
 		
+		logicalSeparator();
+		
+		//Testing functional interfaces in Java8
+		functionalInterface();
 		
 	}
+
+	
 }
